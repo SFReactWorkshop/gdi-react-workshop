@@ -27,19 +27,3 @@ body {
   padding-top: 20px;
   border-top: 1px solid #ddd;
 }
-
-.large-app {
-  padding-left: 40px;
-}
-
-/* 
-For DropdownMenu appearance styles exercise: 
-Define your custom class below.
-*/
-.my-custom-class {
-  /* 
-  font-style: italic;
-  font-weight: 600;
-  font-family: 'Monotype'; 
-  */
-}
