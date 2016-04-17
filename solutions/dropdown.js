@@ -20,7 +20,7 @@ var DropdownMenu = React.createClass({
 	},
 	render: function() {
 		return (
-			<div className='dropdown-wrapper my-custom-class' onClick={ this.toggleMenu }>
+			<div className='dropdown-wrapper' onClick={ this.toggleMenu }>
 				<button className='btn btn-info'>
 					Dropdown Menu
 				</button>
