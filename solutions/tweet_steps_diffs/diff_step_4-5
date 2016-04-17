@@ -1,0 +1,41 @@
+--- solutions/tweet_steps/tweet_step_4.js	2016-01-20 03:08:44.000000000 -0800
++++ solutions/tweet_steps/tweet_step_5.js	2016-01-20 03:08:52.000000000 -0800
+@@ -1,18 +1,10 @@
+ var React = require('react');
+ var ReactDOM = require('react-dom');
+ 
+-var data = [
+-  {
+-      "author": "Michael Scott",
+-      "text": "Would I rather be feared or loved? Easy, both. I want people to be afraid of how much they love me."
+-  },
+-  {
+-      "author": "Jeff Bezos",
+-      "text": "In the end, we are our choices."
+-  }
+-];
+-
+ var Twitter = React.createClass({
++  getInitialState: function () {
++    return { data: [] };
++  },
+   // loadTweetsFromServer: function () {
+   //   // GET updated set of tweets from database
+   //   $.get(this.props.url, function (data) {
+@@ -38,7 +30,7 @@
+       <div className="twitter">
+         <h1>Tweets</h1>
+         <TweetForm />
+-        <TweetList data={ this.props.data } />
++        <TweetList data={ this.state.data } />
+       </div>
+     );
+   }
+@@ -81,6 +73,6 @@
+ });
+ 
+ ReactDOM.render(
+-  <Twitter data={data} />,
++  <Twitter />,
+   document.getElementById('tweets')
+ );

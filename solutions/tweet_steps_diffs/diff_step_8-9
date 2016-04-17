@@ -1,0 +1,32 @@
+--- solutions/tweet_steps/tweet_step_8.js	2016-01-20 03:09:15.000000000 -0800
++++ solutions/tweet_steps/tweet_step_9.js	2016-01-20 03:09:24.000000000 -0800
+@@ -40,13 +40,26 @@
+   handleSubmit: function(e) {
+     e.preventDefault();
+ 
+-    alert('You submitted the form!');
++    // Get new author and text from the input fields
++    var author = this.refs.author.value;
++    var text = this.refs.text.value;
++
++    // Do nothing if either input field is blank
++    if (!text || !author) {
++      return;
++    }
++
++    alert('Send tweet data; author: ' + author + ', text: ' + text);
++
++    // Set input fields back to empty
++    this.refs.author.value = '';
++    this.refs.text.value = '';
+   },
+   render: function () {
+     return (
+       <form className="tweetForm" onSubmit={ this.handleSubmit }>
+-        <input type="text" placeholder="Author Name" />
+-        <input type="text" placeholder="Tweet" />
++        <input type="text" placeholder="Author Name" ref="author" />
++        <input type="text" placeholder="Tweet" ref="text" />
+         <button type="submit" className="btn btn-info">Tweet</button>
+       </form>
+     );
